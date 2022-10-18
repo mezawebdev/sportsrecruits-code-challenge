@@ -9,26 +9,39 @@ defineProps<{
 
 <template>
   <div class="AcademicFitReport">
-    <ReportTitle />
-    <GeneralInfo
-      :name="athlete.name"
-      :profile_image="athlete.profile_image"
-      :sport="athlete.sport"
-      :high_school="athlete.high_school"
-      :grad_year="athlete.grad_year"
-      :gpa="athlete.gpa"
-      :club="athlete.club"
-      :major="athlete.major"
-    />
+    <div class="AcademicFitReport__Header">
+      <ReportTitle />
+      <GeneralInfo
+        :name="athlete.name"
+        :profile_image="athlete.profile_image"
+        :sport="athlete.sport"
+        :high_school="athlete.high_school"
+        :grad_year="athlete.grad_year"
+        :gpa="athlete.gpa"
+        :club="athlete.club"
+        :major="athlete.major"
+      />
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/media";
+
 .AcademicFitReport {
   border-top: 10px solid var(--aqua);
   border-bottom: 10px solid var(--aqua);
-  padding-block: 1.25rem;
-  padding: 1rem;
-  max-width: 64rem;
+  padding-block: clamp(1.25rem, -0.917rem + 9.24vw, 5rem);
+  padding-inline: 1rem;
+  max-width: 70rem;
+
+  &__Header {
+    @media (min-width: media.$md) {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+  }
 }
 </style>

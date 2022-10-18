@@ -6,8 +6,14 @@
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/media";
+
 .ReportTitle {
   margin-block-end: 2rem;
+
+  @media (min-width: media.$md) {
+    text-align: right;
+  }
 
   img {
     width: 100%;

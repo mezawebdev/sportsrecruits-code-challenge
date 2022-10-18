@@ -55,6 +55,11 @@ defineProps<{
     width: clamp(3.125rem, 1.319rem + 7.7vw, 6.25rem);
     height: clamp(3.125rem, 1.319rem + 7.7vw, 6.25rem);
     border-radius: 100%;
+    flex-shrink: 0;
+
+    @media (max-width: media.$md) {
+      margin-block-end: 0.5rem;
+    }
 
     div {
       width: 100%;
@@ -65,8 +70,13 @@ defineProps<{
   }
 
   &__Details {
+    p + p {
+      margin-block-start: 0.5rem;
+    }
+
     h2 {
       color: var(--aqua);
+      margin-block-end: 0.5rem;
     }
   }
 
