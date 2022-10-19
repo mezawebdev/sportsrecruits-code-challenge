@@ -49,7 +49,8 @@ defineProps<{
 .AcademicFitReport {
   border-top: 10px solid var(--aqua);
   border-bottom: 10px solid var(--aqua);
-  padding-block: clamp(1.25rem, -0.638rem + 8.05vw, 5rem);
+  padding-block: clamp(1.25rem, -0.638rem + 8.05vw, 5rem)
+    clamp(1rem, 0.582rem + 1.78vw, 2.188rem);
   padding-inline: 1rem;
   max-width: 90rem;
   margin-inline: auto;
@@ -62,6 +63,15 @@ defineProps<{
       flex-direction: row-reverse;
       gap: 1rem;
       justify-content: space-between;
+    }
+  }
+
+  &__Footer {
+    margin-block-start: clamp(3.125rem, 1.408rem + 7.32vw, 8rem);
+    font-size: 0.85rem;
+
+    p + p {
+      margin-block-start: 0.5rem;
     }
   }
 }

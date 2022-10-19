@@ -138,6 +138,14 @@ const paletteIndex = computed(() => {
   &__ExtraDetails {
     display: flex;
     gap: 5rem;
+
+    @media (max-width: media.$sm) {
+      display: block;
+
+      div + div {
+        margin-block-start: 0.5rem;
+      }
+    }
   }
 }
 </style>
