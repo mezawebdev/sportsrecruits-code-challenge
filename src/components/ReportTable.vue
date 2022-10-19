@@ -6,7 +6,7 @@ defineProps<{ reports: any[] }>();
   <div class="ReportTable">
     <table>
       <tr>
-        <th>School Name</th>
+        <th class="ReportTable__School sticky">School Name</th>
         <th>Athletic Div</th>
         <th>Conference</th>
         <th>
@@ -27,7 +27,7 @@ defineProps<{ reports: any[] }>();
         <th>ACT Composite***<br />25%-75%</th>
       </tr>
       <tr v-for="report in reports">
-        <td>{{ report.school }}</td>
+        <td class="ReportTable__School sticky">{{ report.school }}</td>
         <td class="center">{{ report.division }}</td>
         <td>{{ report.conference }}</td>
         <td class="center">{{ report.ranking }}</td>
@@ -74,32 +74,47 @@ defineProps<{ reports: any[] }>();
     text-align: center;
   }
 
+  .sticky {
+    position: sticky;
+    left: 0;
+    width: 12.5rem;
+  }
+
   table {
     border-collapse: collapse;
     width: 100%;
+    min-width: 62rem;
 
-    tr:nth-child(odd) {
-      background: var(--light-gray);
+    tr {
+      &:nth-child(odd):not(:first-child) {
+        th,
+        td {
+          background: var(--light-gray);
+        }
+      }
+
+      &:nth-child(even) {
+        th,
+        td {
+          background: white;
+        }
+      }
     }
 
     th,
     td {
       padding: 0.5rem;
-      margin: 0;
+      color: var(--dark-gray);
     }
 
     th {
-      background: black;
+      background: var(--dark-gray);
       color: white;
       font-weight: bold;
 
       span {
         font-weight: normal;
       }
-    }
-
-    table tr:nth-child(1) {
-      background: black;
     }
   }
 
