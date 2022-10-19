@@ -11,5 +11,3 @@ const athleteData = data[0] as Athlete;
     <AcademicFitReport :athlete="athleteData" />
   </main>
 </template>
-
-<style scoped></style>
