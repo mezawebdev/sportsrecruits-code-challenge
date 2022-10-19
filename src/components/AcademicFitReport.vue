@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import GeneralInfo from "@/components/GeneralInfo.vue";
 import ReportTitle from "@/components/ReportTitle.vue";
+import ReportTable from "@/components/ReportTable.vue";
 
 defineProps<{
   athlete?: any;
@@ -22,6 +23,7 @@ defineProps<{
         :major="athlete.major"
       />
     </div>
+    <ReportTable :reports="athlete.report" />
   </div>
 </template>
 
@@ -31,11 +33,14 @@ defineProps<{
 .AcademicFitReport {
   border-top: 10px solid var(--aqua);
   border-bottom: 10px solid var(--aqua);
-  padding-block: clamp(1.25rem, -0.917rem + 9.24vw, 5rem);
+  padding-block: clamp(1.25rem, -0.638rem + 8.05vw, 5rem);
   padding-inline: 1rem;
-  max-width: 70rem;
+  max-width: 90rem;
+  margin-inline: auto;
 
   &__Header {
+    margin-block-end: clamp(1.25rem, -0.638rem + 8.05vw, 5rem);
+
     @media (min-width: media.$md) {
       display: flex;
       flex-direction: row-reverse;

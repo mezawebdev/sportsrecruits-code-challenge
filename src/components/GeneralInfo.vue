@@ -3,7 +3,7 @@ defineProps<{
   name?: string;
   sport?: string;
   high_school?: { name: string };
-  grad_year?: string;
+  grad_year?: number;
   gpa?: number;
   club?: { name: string };
   major?: string;
