@@ -3,14 +3,18 @@ import type { Report } from "@/interfaces";
 import TableRow from "@/components/atoms/TableRow.vue";
 import TableHeader from "@/components/atoms/TableHeader.vue";
 
-defineProps<{ reports: Report[] }>();
+defineProps<{ reports: Report[]; athleteGPA: number }>();
 </script>
 
 <template>
   <div class="ReportTable">
     <table>
       <TableHeader />
-      <TableRow v-for="report in reports" :report="report" />
+      <TableRow
+        v-for="report in reports"
+        :report="report"
+        :athleteGPA="athleteGPA"
+      />
     </table>
   </div>
 </template>

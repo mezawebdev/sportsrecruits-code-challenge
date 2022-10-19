@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import TableGAPColorCell from "@/components/atoms/TableGPAColorCell.vue";
 import type { Report } from "@/interfaces";
-defineProps<{ report: Report }>();
+defineProps<{ report: Report; athleteGPA: number }>();
 </script>
 
 <template>
@@ -13,7 +14,10 @@ defineProps<{ report: Report }>();
       <div>
         <span>{{ report.gpa.min }}</span>
         <span>{{ report.gpa["25%"] }}</span>
-        <span class="DataRow__GPA50">{{ report.gpa["50%"] }}</span>
+        <TableGAPColorCell
+          :schoolAverage="report.gpa['50%']"
+          :athleteGPA="athleteGPA"
+        />
         <span>{{ report.gpa["75%"] }}</span>
         <span>{{ report.gpa.max }}</span>
       </div>
