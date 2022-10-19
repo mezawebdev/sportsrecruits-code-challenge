@@ -12,17 +12,17 @@ export interface Report {
   };
   sat: {
     reading: {
-      min: number;
-      max: number;
+      min: number | string;
+      max: number | string;
     };
     math: {
-      min: number;
-      max: number;
+      min: number | string;
+      max: number | string;
     };
   };
   act: {
-    min: number;
-    max: number;
+    min: number | string;
+    max: number | string;
   };
 }
 

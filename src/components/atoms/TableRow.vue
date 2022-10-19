@@ -20,21 +20,23 @@ defineProps<{ report: Report }>();
     </td>
     <td class="center">
       {{
-        report.sat.reading.min !== "N/A" && report.sat.reading.max !== "N/A"
+        typeof report.sat.reading.min === "number" &&
+        typeof report.sat.reading.max === "number"
           ? `${report.sat.reading.min}-${report.sat.reading.max}`
           : "Not Reported"
       }}
     </td>
     <td class="center">
       {{
-        report.sat.math.min !== "N/A" && report.sat.math.max !== "N/A"
+        typeof report.sat.math.min === "number" &&
+        typeof report.sat.math.max === "number"
           ? `${report.sat.math.min}-${report.sat.math.max}`
           : "Not Reported"
       }}
     </td>
     <td class="center">
       {{
-        report.act.min !== "N/A" && report.act.max !== "N/A"
+        typeof report.act.min === "number" && typeof report.act.max === "number"
           ? `${report.act.min}-${report.act.max}`
           : "Not Reported"
       }}
