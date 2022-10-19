@@ -1,6 +1,6 @@
 <template>
   <div class="ReportTitle">
-    <img src="images/sr_insights_logo.png" />
+    <img src="/images/sr_insights_logo.png" />
     <h1>Academic Fit Report</h1>
   </div>
 </template>
