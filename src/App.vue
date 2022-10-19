@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import AcademicFitReport from "@/components/AcademicFitReport.vue";
+import AcademicFitReport from "@/components/templates/AcademicFitReport.vue";
 import { data } from "./assets/data.json";
+import type { Athlete } from "@/interfaces";
+
+const athleteData = data[0] as Athlete;
 </script>
 
 <template>
   <main>
-    <AcademicFitReport :athlete="data[0]" />
+    <AcademicFitReport :athlete="athleteData" />
   </main>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

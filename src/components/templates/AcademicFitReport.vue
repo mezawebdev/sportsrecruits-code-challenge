@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import GeneralInfo from "@/components/GeneralInfo.vue";
-import ReportTitle from "@/components/ReportTitle.vue";
-import ReportTable from "@/components/ReportTable.vue";
+import GeneralInfo from "@/components/atoms/GeneralInfo.vue";
+import ReportTitle from "@/components/atoms/ReportTitle.vue";
+import ReportTable from "@/components/molecules/ReportTable.vue";
+import type { Athlete } from "@/interfaces";
 
 defineProps<{
-  athlete?: any;
+  athlete: Athlete;
 }>();
 </script>
 

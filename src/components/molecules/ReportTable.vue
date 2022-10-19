@@ -1,5 +1,7 @@
 <script setup lang="ts">
-defineProps<{ reports: any[] }>();
+import type { Report } from "@/interfaces";
+
+defineProps<{ reports: Report[] }>();
 </script>
 
 <template>
@@ -32,11 +34,13 @@ defineProps<{ reports: any[] }>();
         <td>{{ report.conference }}</td>
         <td class="center">{{ report.ranking }}</td>
         <td class="ReportTable__GPACell">
-          <div>{{ report.gpa.min }}</div>
-          <div>{{ report.gpa["25%"] }}</div>
-          <div class="ReportTable__GPA50">{{ report.gpa["50%"] }}</div>
-          <div>{{ report.gpa["75%"] }}</div>
-          <div>{{ report.gpa.max }}</div>
+          <div>
+            <span>{{ report.gpa.min }}</span>
+            <span>{{ report.gpa["25%"] }}</span>
+            <span class="ReportTable__GPA50">{{ report.gpa["50%"] }}</span>
+            <span>{{ report.gpa["75%"] }}</span>
+            <span>{{ report.gpa.max }}</span>
+          </div>
         </td>
         <td class="center">
           {{
@@ -132,12 +136,26 @@ defineProps<{ reports: any[] }>();
   }
 
   &__GPACell {
-    display: flex;
-    justify-content: space-evenly;
-    text-align: center;
+    position: relative;
 
     div {
-      width: 1.875rem;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      text-align: center;
+      position: relative;
+      height: 100%;
+      position: absolute;
+      width: calc(100% - (0.5rem * 2));
+      top: 0;
+      align-items: center;
+      left: 0.5rem;
+
+      span {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 
